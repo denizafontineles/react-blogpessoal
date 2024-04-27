@@ -1,13 +1,41 @@
-import React from 'react';
 import './Home.css';
 
-function Home(){
+/*  Props ou Propriedades, são formas de passar informações de um Componente
+    para outro componente através de parâmetros dos Componentes
+
+    Props são os parametros dos Componentes
+*/
+
+// Definindo as Props do componente Home através de um interface
+interface HomeProps {
+    title: string;
+    description: string;
+}
+
+// Indicamos que o Card recebe as props. titulo, descricao da Interface CardProps
+
+function Home({ title, description }: HomeProps) {
     return (
-        <>
-            <h1 className="titulo" >HELLO WORLD</h1>
-            <img src="https://i.imgur.com/H88yIo2.png" alt="Imagem Tela Inicial" className="img"/>
-        </>
-    );
+        <div className="container">
+            <h1>{title}</h1>
+            <p>{description}</p>
+        </div>
+    )
 }
 
 export default Home;
+
+/* 
+
+function Home(props:HomeProps){
+    return (
+        <div>
+            <h2>{props.title}</h2>
+            <p>{props.description}</p>
+        </div>
+    );
+}
+
+*/
+
+

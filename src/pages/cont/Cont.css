@@ -1,0 +1,19 @@
+.container{
+    width: 500px;
+    border: 5px solid darkgreen;
+    margin: 0 0 1rem 0;
+    padding: 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+p{
+    font-size: 24px;
+}
+
+button{
+    font-size: 20px;
+}
