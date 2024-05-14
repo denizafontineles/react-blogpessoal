@@ -8,7 +8,7 @@ import { toastAlerta } from '../../../utils/toastAlerta';
 
 
 function FormularioPostagem() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const { id } = useParams<{ id: string }>();
 
@@ -105,6 +105,7 @@ function FormularioPostagem() {
         });
         toastAlerta('Postagem atualizada com sucesso', 'sucesso');
         retornar();
+        
       } catch (error: any) {
         if (error.toString().includes('403')) {
           toastAlerta('O token expirou, favor logar novamente', 'info')

@@ -8,9 +8,10 @@ import CardPostagem from '../cardPostagem/CardPostagem';
 import { toastAlerta } from '../../../utils/toastAlerta';
 
 function ListaPostagens() {
+
   const [postagens, setPostagens] = useState<Postagem[]>([]);
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
@@ -24,7 +25,7 @@ function ListaPostagens() {
 
   async function buscarPostagens() {
     try {
-      await buscar('/postagens', setPostagens, {
+      await buscar('/postagens/all', setPostagens, {
         headers: {
           Authorization: token,
         },
